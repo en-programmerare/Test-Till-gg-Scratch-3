@@ -10,7 +10,7 @@ MyExtension.prototype.getInfo = function () {
         name: "My test addon",
         
         blocks: [
-            test: {
+            {
                 opcode: "testblock",
                 text: "Do something",
                 blockType: BlockType.COMMAND,
