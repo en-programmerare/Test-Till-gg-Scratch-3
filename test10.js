@@ -48,9 +48,10 @@ MyExtension.prototype.turnOff = function(args) {
 };
 
 MyExtension.prototype.alarmEvent = function(args) {
-    var time = new Date();
-    if(time.getHours() === alarmHour && time.getMinutes() === alarmMinute)
+    var now = new Date();
+    if(now.getHours() == alarmHour && now.getMinutes() == alarmMinute) {
         return true;
+    }
     return false;
 };
 
