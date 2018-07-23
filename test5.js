@@ -30,8 +30,10 @@ MyExtension.prototype.getInfo = function () {
                 text: "set alarm to [MIDDAY]",
                 blockType: Scratch.BlockType.COMMAND,
                 arguments: {
-                    type: Scratch.ArgumentType.STRING,
-                    menu: "middayMidnight"
+                    MIDDAY: {
+                        type: Scratch.ArgumentType.STRING,
+                        menu: "middayMidnight"
+                    }
                 }
             },
             {
