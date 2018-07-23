@@ -4,14 +4,15 @@ var alarmMinute = -1;
 var MyExtension = function () {
 };
 
-MyExtension.prototype.setAlarmMidday = function() {
-    alarmMinute = 0;
-    alarmHour = 12;
-};
-
-MyExtension.prototype.setAlarmMidnight = function() {
-    alarmMinute = 0;
-    alarmHour = 0;
+MyExtension.prototype.setAlarmMidday = function(args) {
+    if(args.MIDDAY === "midday") {
+        alarmMinute = 0;
+        alarmHour = 12;
+    }
+    else {
+        alarmMinute = 0;
+        alarmHour = 0;
+    }
 };
 
 MyExtension.prototype.getAlarm = function() {
@@ -26,15 +27,12 @@ MyExtension.prototype.getInfo = function () {
         blocks: [
             {
                 opcode: "setAlarmMidday",
-                text: "set alarm to midday",
+                text: "set alarm to [MIDDAY]",
                 blockType: Scratch.BlockType.COMMAND,
-                arguments: {}
-            },
-            {
-                opcode: "setAlarmMidnight",
-                text: "set alarm to midnight",
-                blockType: Scratch.BlockType.COMMAND,
-                arguments: {}
+                arguments: {
+                    type: Scratch.ArgumentType.STRING,
+                    menu: "middayMidnight"
+                }
             },
             {
                 opcode: "getAlarm",
@@ -42,7 +40,11 @@ MyExtension.prototype.getInfo = function () {
                 blockType: Scratch.BlockType.REPORTER,
                 arguments: {}
             }
-        ]
+        ],
+        
+        menus: {
+            middayMidnight: ["midday", "midnight"]
+        }
     };
 };
 
