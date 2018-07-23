@@ -10,8 +10,15 @@ MyExtension.prototype.setAlarmMidday = function(args) {
         alarmHour = 12;
     }
     else {
+        if(args.MIDDAY === "midningt") {
         alarmMinute = 0;
         alarmHour = 0;
+        }
+        else {
+            var time = new Date();
+            alarmMinute = time.getMinutes();
+            alarmHour = time.getHours();
+        }
     }
 };
 
@@ -47,6 +54,11 @@ MyExtension.prototype.alarmEvent = function(args) {
     return false;
 };
 
+MyExtension.prototype.setAlarmTime = function(args) {
+    alarmMinute = args.M;
+    alarmHour = args.H;
+};
+
 MyExtension.prototype.getInfo = function () {
     return {
         id: "alarm",
@@ -60,7 +72,7 @@ MyExtension.prototype.getInfo = function () {
                 arguments: {
                     MIDDAY: {
                         type: Scratch.ArgumentType.STRING,
-                        defaultValue: "midday",
+                        defaultValue: "now",
                         menu: "middayMidnight"
                     }
                 }
@@ -94,11 +106,26 @@ MyExtension.prototype.getInfo = function () {
                 text: "when alarm goes off",
                 blockType: Scratch.BlockType.HAT,
                 arguments: {}
-            }
+            },
+            {
+                opcode: "setAlarmTime",
+                text: "set alarm to [H]:[M]",
+                blockType: Scratch.BlockType.COMMAND,
+                arguments: {
+                    H: {
+                        type: Scratch.ArgumentType.NUMBER,
+                        defaultValue: 12,
+                    },
+                    M: {
+                        type: Scratch.ArgumentType.NUMBER,
+                        defaultValue: 0,
+                    }
+                }
+            },
         ],
         
         menus: {
-            middayMidnight: ["midday", "midnight"],
+            middayMidnight: ["midday", "midnight", "now"],
             alarmFetchType: ["time", "hour", "minute"]
         }
     };
