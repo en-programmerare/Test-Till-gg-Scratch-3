@@ -40,10 +40,17 @@ MyExtension.prototype.turnOff = function(args) {
     alarmMinute = -1;
 };
 
+MyExtension.prototype.alarmEvent = function(args) {
+    Date time = new Date();
+    if(time.getHours() === alarmHour && time.getMinutes() === alarmMinute)
+        return true;
+    return false;
+};
+
 MyExtension.prototype.getInfo = function () {
     return {
         id: "alarm",
-        name: "Alarm Extension",
+        name: "Alarm",
         
         blocks: [
             {
@@ -80,6 +87,12 @@ MyExtension.prototype.getInfo = function () {
                 opcode: "turnOff",
                 text: "turn alarm off",
                 blockType: Scratch.BlockType.COMMAND,
+                arguments: {}
+            },
+            {
+                opcode: "alarmEvent",
+                text: "when alarm goes off",
+                blockType: Scratch.BlockType.HAT,
                 arguments: {}
             }
         ],
