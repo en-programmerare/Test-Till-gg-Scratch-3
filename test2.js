@@ -13,7 +13,7 @@ MyExtension.prototype.getInfo = function () {
             {
                 opcode: "testblock",
                 text: "Do something",
-                blockType: BlockType.COMMAND,
+                blockType: Scratch.BlockType.COMMAND,
                 arguments: {}
             }
         ]
