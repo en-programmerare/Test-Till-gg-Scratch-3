@@ -87,11 +87,11 @@ MyExtension.prototype.getInfo = function () {
             {
                 opcode: 'getAlarm',
                 text: 'get alarm [TYPE]',
-                blockType: Scratch.BlockType.REPORTER,
+                blockType: BlockType.REPORTER,
                 func: 'getAlarm',
                 arguments: {
                     TYPE: {
-                        type: Scratch.ArgumentType.STRING,
+                        type: ArgumentType.STRING,
                         defaultValue: 'time',
                         menu: 'alarmFetchType'
                     }
@@ -114,7 +114,7 @@ MyExtension.prototype.getInfo = function () {
             {
                 opcode: 'alarmEvent',
                 text: 'when alarm goes off',
-                blockType: Scratch.BlockType.HAT,
+                blockType: BlockType.HAT,
                 func: 'alarmEvent',
                 arguments: {}
             },
