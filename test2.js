@@ -49,13 +49,13 @@ MyExtension.prototype.turnOff = function(args) {
 
 MyExtension.prototype.alarmEvent = function(args, util) {
     const now = new Date();
-    //if(now.getHours() == alarmHour && now.getMinutes() == alarmMinute) {
-        //return true;
-    //}
-    //return false;
-    if(util.target.x === 0 && util.target.y === 0)
+    if(now.getHours() == alarmHour && now.getMinutes() == alarmMinute) {
         return true;
+    }
     return false;
+    /*if(util.target.x === 0 && util.target.y === 0)
+        return true;
+    return false;*/
 };
 
 MyExtension.prototype.setAlarmTime = function(args) {
@@ -75,6 +75,7 @@ MyExtension.prototype.getInfo = function () {
                 opcode: "setAlarmMidday",
                 text: "set alarm to [MIDDAY]",
                 blockType: Scratch.BlockType.COMMAND,
+                func: "setAlarmMidday",
                 arguments: {
                     MIDDAY: {
                         type: Scratch.ArgumentType.STRING,
@@ -87,6 +88,7 @@ MyExtension.prototype.getInfo = function () {
                 opcode: "getAlarm",
                 text: "get alarm [TYPE]",
                 blockType: Scratch.BlockType.REPORTER,
+                func: "getAlarm",
                 arguments: {
                     TYPE: {
                         type: Scratch.ArgumentType.STRING,
@@ -99,24 +101,28 @@ MyExtension.prototype.getInfo = function () {
                 opcode: "getAlarmOn",
                 text: "alarm on?",
                 blockType: Scratch.BlockType.BOOLEAN,
+                func: "getAlarmOn",
                 arguments: {}
             },
             {
                 opcode: "turnOff",
                 text: "turn alarm off",
                 blockType: Scratch.BlockType.COMMAND,
+                func: "turnOff",
                 arguments: {}
             },
             {
                 opcode: "alarmEvent",
                 text: "when alarm goes off",
                 blockType: Scratch.BlockType.HAT,
+                func: "alarmEvent",
                 arguments: {}
             },
             {
                 opcode: "setAlarmTime",
                 text: "set alarm to [H]:[M]",
                 blockType: Scratch.BlockType.COMMAND,
+                func: "setAlarmTime",
                 arguments: {
                     H: {
                         type: Scratch.ArgumentType.NUMBER,
