@@ -47,17 +47,22 @@ MyExtension.prototype.turnOff = function(args) {
     alarmMinute = -1;
 };
 
-MyExtension.prototype.alarmEvent = function(args) {
-    var now = new Date();
-    if(now.getHours() == alarmHour && now.getMinutes() == alarmMinute) {
+MyExtension.prototype.alarmEvent = function(args, util) {
+    const now = new Date();
+    //if(now.getHours() == alarmHour && now.getMinutes() == alarmMinute) {
+        //return true;
+    //}
+    //return false;
+    if(util.target.x === 0 && util.target.y === 0)
         return true;
-    }
     return false;
 };
 
 MyExtension.prototype.setAlarmTime = function(args) {
-    alarmMinute = args.M;
-    alarmHour = args.H;
+    if(args.H <= 23 && args.H >= 0 && args.M <= 59 && args.M >= 0) {
+        alarmMinute = args.M;
+        alarmHour = args.H;
+    }
 };
 
 MyExtension.prototype.getInfo = function () {
