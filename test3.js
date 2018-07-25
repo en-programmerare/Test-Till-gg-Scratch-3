@@ -48,14 +48,15 @@ MyExtension.prototype.turnOff = function(args) {
 };
 
 MyExtension.prototype.alarmEvent = function(args, util) {
-    const now = new Date();
+    /*const now = new Date();
     if(now.getHours() == alarmHour && now.getMinutes() == alarmMinute) {
         return true;
     }
     return false;
-    /*if(util.target.x === 0 && util.target.y === 0)
+    if(util.target.x === 0 && util.target.y === 0)
         return true;
     return false;*/
+    return true;
 };
 
 MyExtension.prototype.setAlarmTime = function(args) {
@@ -113,14 +114,22 @@ MyExtension.prototype.getInfo = function () {
             },
             {
                 opcode: 'alarmEvent',
-                text: 'when alarm goes off',
+                text: formatMessage({
+                    id: 'alarm.alarmEvent',
+                    default: 'when alarm goes off',
+                    description: 'run code when the alarm goes off'
+                }),
                 blockType: Scratch.BlockType.HAT,
                 func: 'alarmEvent',
                 arguments: {}
             },
             {
                 opcode: 'setAlarmTime',
-                text: 'set alarm to [H]:[M]',
+                text: formatMessage({
+                    id: 'alarm.setAlarmTime',
+                    default: 'set alarm to [H]:[M]',
+                    description: 'set the alarm to a time'
+                }),
                 blockType: Scratch.BlockType.COMMAND,
                 func: 'setAlarmTime',
                 arguments: {
