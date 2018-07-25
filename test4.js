@@ -114,7 +114,7 @@ MyExtension.prototype.getInfo = function () {
             },
             {
                 opcode: 'alarmEvent',
-                text: formatMessage({
+                text: Scratch.formatMessage({
                     id: 'alarm.alarmEvent',
                     default: 'when alarm goes off',
                     description: 'run code when the alarm goes off'
@@ -125,7 +125,7 @@ MyExtension.prototype.getInfo = function () {
             },
             {
                 opcode: 'setAlarmTime',
-                text: formatMessage({
+                text: Scratch.formatMessage({
                     id: 'alarm.setAlarmTime',
                     default: 'set alarm to [H]:[M]',
                     description: 'set the alarm to a time'
