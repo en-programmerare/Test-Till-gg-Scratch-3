@@ -1,6 +1,7 @@
-# scratch-3.0-TEST
+# Scratch 3.0 Test Alarm Extension
 
-This is just a test and it doesn't really work very well. To use it, go to (https://sheeptester.github.io/scratch-gui/|this site) and press the extension button. Click "Add an extension" and enter this text:
-[https://rawgit.com/en-programmerare/scratch-3.0-TEST/master/test2.js]
+> **This does not work as intended!**
 
-But please remember it doesn't actually work.
+##Installation
+To use it, go to [SheepTester's Modified Scratch 3.0 Beta](https://sheeptester.github.io/scratch-gui/) and press the extension button. Click "Add an extension" and enter this text:
+'https://rawgit.com/en-programmerare/scratch-3.0-TEST/master/test2.js'
