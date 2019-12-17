@@ -1,8 +1,7 @@
-# Scratch 3.0 Test Alarm Extension
+# Scratch 3.0 Testtillägg
 
-## Please note
-This is working progress and does not work as intended!
+## Tänk på
+Det här är bara ett test.
 
 ## Installation
-To use it, go to [SheepTester's Modified Scratch 3.0 Beta](https://sheeptester.github.io/scratch-gui/) and press the extension button. Click "Add an extension" and enter this text:
-´´´https://rawgit.com/en-programmerare/scratch-3.0-TEST/master/test2.js´´´
+Gå till [SheepTesters modifierade Scratch 3.0](https://sheeptester.github.io/scratch-gui/) och installera ett tillägg för utvecklare. Klistra in följande text: ´´´https://rawgit.com/en-programmerare/scratch-3.0-TEST/master/test2.js´´´.
